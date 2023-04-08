@@ -25,6 +25,10 @@ app.use(helmet());
 app.use(morgan('dev'));
 //routes
 app.use('/api',Routes);
+
+app.get('/',(req,res)=>{
+    res.send('Welcome to the API');
+});
 app.use(errorHandler);
 
 module.exports=app;
