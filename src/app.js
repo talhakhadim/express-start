@@ -7,6 +7,8 @@ const helmet=require('helmet');
 const morgan=require('morgan');
 const errorHandler=require('./middleware/errorHandler');
 const Routes=require('./routes');
+const {connectDB}=require('./config/database');
+
 
 
 
@@ -30,5 +32,6 @@ app.get('/',(req,res)=>{
     res.send('Welcome to the API');
 });
 app.use(errorHandler);
+connectDB();
 
 module.exports=app;
